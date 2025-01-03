@@ -53,6 +53,10 @@
 
 #include "touch_host_driver.h"
 
+/* Host Version 1.1 */
+#define HOST_MAJOR_VERSION_NO   1u
+#define HOST_MINOR_VERSION_NO   1u
+
 #define MTCH2120_DEVICE_TYPE    0x0Bu
 
 #define DEF_TOUCH_DATA_STREAMER_ENABLE 1u

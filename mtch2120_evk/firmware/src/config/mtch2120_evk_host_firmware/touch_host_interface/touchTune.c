@@ -1067,22 +1067,22 @@ void uart_execute_command(uint8_t channel, uint8_t command, uint8_t onOff)
             case BT_LUMP_0:    // button 12
                 mtch2120_lumpConfiguration_0 = (onOff == 1u) ? (mtch2120_lumpConfiguration_0 |  ((uint16_t)1u << channel))
                                                              : (mtch2120_lumpConfiguration_0 & ~((uint16_t)1u << channel));
-                mtch2120_getLumpConfiguration_0();
+                mtch2120_setLumpConfiguration_0();
                 break;
             case BT_LUMP_1:    // button 13
                 mtch2120_lumpConfiguration_1 = (onOff == 1u) ? (mtch2120_lumpConfiguration_1 |  ((uint16_t)1u << channel))
                                                              : (mtch2120_lumpConfiguration_1 & ~((uint16_t)1u << channel));
-                mtch2120_getLumpConfiguration_1();
+                mtch2120_setLumpConfiguration_1();
                 break;
             case BT_LUMP_2:    // button 14
                 mtch2120_lumpConfiguration_2 = (onOff == 1u) ? (mtch2120_lumpConfiguration_2 |  ((uint16_t)1u << channel))
                                                              : (mtch2120_lumpConfiguration_2 & ~((uint16_t)1u << channel));
-                mtch2120_getLumpConfiguration_2();
+                mtch2120_setLumpConfiguration_2();
                 break;
             case BT_LUMP_3:    // button 15
                 mtch2120_lumpConfiguration_3 = (onOff == 1u) ? (mtch2120_lumpConfiguration_3 |  ((uint16_t)1u << channel))
                                                              : (mtch2120_lumpConfiguration_3 & ~((uint16_t)1u << channel));
-                mtch2120_getLumpConfiguration_3();
+                mtch2120_setLumpConfiguration_3();
                 break;
             default:
                 // do nothing...

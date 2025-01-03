@@ -68,6 +68,7 @@ static void blinkCommStatusLedHandler(void);
 static void updateTouchMemory(void);
 static void updateStatusLeds(void);
 static void blinkButton11Led(void);
+static void hostVersionLedStatus(void);
 static void blinkCommStatusLed(void);
 static void initStatusPins(void);
 static void resetClientDevice(void);
@@ -95,11 +96,10 @@ int main ( void )
     // resetting 2120 
     resetClientDevice();
     
+    hostVersionLedStatus();
+    
     // data visualizer initialization
     touch_init_example();
-    
-    // initializing touch tune module
-    touchTuneInit();
     
     // initializing button led driver
     initLeds();
@@ -379,6 +379,46 @@ static void scanAndCopyDataFromUSB(void)
                 read_buf_write_ptr = 0;
             }
         }
+    }
+}
+
+static void hostVersionLedStatus(void)
+{
+    static uint8_t status = 0u;
+    
+    /********************************************************************
+     * Note: 
+     * version 1.1 led status.
+     *  2 times on 2 times off; therefore i is compared with 4.
+    ********************************************************************/
+    
+    for(uint8_t i = 0u; i < 4u; i++)
+    {
+        switch(status)
+        {
+            case 0u:
+                PORT_REGS->GROUP[0u].PORT_OUT &= ~DEFAULT_CONFIG;
+                PORT_REGS->GROUP[0u].PORT_OUT &= ~STATUS_2;
+                PORT_REGS->GROUP[0u].PORT_OUT &= ~STATUS_3;
+                PORT_REGS->GROUP[0u].PORT_OUT &= ~STATUS_4;
+                status++;
+                break;
+            case 1u:
+                PORT_REGS->GROUP[0u].PORT_OUT |= DEFAULT_CONFIG;
+                PORT_REGS->GROUP[0u].PORT_OUT |= STATUS_2;
+                PORT_REGS->GROUP[0u].PORT_OUT |= STATUS_3;
+                PORT_REGS->GROUP[0u].PORT_OUT |= STATUS_4;
+                status = 0u;
+                break;
+            default:
+                status = 0u;
+                break;
+        }
+        
+        // delay 
+        for(unsigned int i = 0u; i < 1000000u; i++);
+        for(unsigned int i = 0u; i < 1000000u; i++);
+        for(unsigned int i = 0u; i < 1000000u; i++);
     }
 }
 

@@ -10,6 +10,9 @@ It is recommended to use **mtch2120_evk_host_firmware.X** project for customizin
 ## How to Update the EVK Host Application
 Follow [Procedure to Update the On-board Host MCU](https://onlinedocs.microchip.com/oxy/GUID-EE0BA0CB-C46E-4AD4-9253-1C07A98C3EF6-en-US-2/GUID-86A23212-E478-4CC9-B71B-E5F771683AA5.html) in the **EVK User Guide** to update the host firmware
 
+## How to check the host application version?
+- v1.1.0
+In EVK, there are 4 LEDs (D1, D3, D5, D6) which are mounted near the USB port. These LEDs will blink 2 times every time the kit powers up.
 
 
 [back](../../readme.md)

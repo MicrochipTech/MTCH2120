@@ -8,6 +8,7 @@ Refer to [datasheet](https://ww1.microchip.com/downloads/aemDocuments/documents/
 ## Directory Structure
 - [mtch2120_evk](./mtch2120_evk)
     - [bin](./mtch2120_evk/bin/)
+        - [mtch2120_evk_host_1.1.0.hex](./mtch2120_evk/bin/mtch2120_evk_host_1.1.0.hex)
         - [mtch2120_evk_host_1.0.0.hex](./mtch2120_evk/bin/mtch2120_evk_host_1.0.0.hex)
         - [readme_hex_files.md](./mtch2120_evk/bin/readme_hex_files.md)
     - [firmware](./mtch2120_evk/firmware/)

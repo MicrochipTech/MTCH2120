@@ -37,12 +37,6 @@
 
 static uint8_t deviceID_example = 0u;
 static uint8_t version_example  = 0u;
-static uint8_t threshold_example[DEF_NUM_SENSORS] = {
-                                                        20u, 20u, 20u, 20u, 
-                                                        20u, 20u, 20u, 20u, 
-                                                        20u, 20u, 20u, 20u,
-                                                        20u, 20u, 20u, 20u
-                                                    };
 
 static volatile MTCH2120_I2C_Status i2cStatus_example = SUCCESS;
 static uint8_t offset_example = 0u;
@@ -75,18 +69,6 @@ void touch_init_example(void)
     // reading Device Version from MTCH2120 device
     offset_example = 1u;    // calculated as per mtch2120 datasheet
     i2cStatus_example = mtch2120_readFromMemory(((uint16_t)ADDR_DEVICE_ID | offset_example), (uint8_t*)&version_example, (uint8_t)sizeof(version_example));
-    if(i2cStatus_example == SUCCESS)
-    {
-        // success
-    }
-    else
-    {
-        // failed to read
-    }
-    
-    // writing threshold for all the channels
-    offset_example = 0u;    // calculated as per mtch2120 datasheet  
-    i2cStatus_example = mtch2120_writeToMemory(((uint16_t)ADDR_THRESHOLD | offset_example), (uint8_t*)threshold_example, (uint8_t)sizeof(threshold_example));
     if(i2cStatus_example == SUCCESS)
     {
         // success

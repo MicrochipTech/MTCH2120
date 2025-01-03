@@ -5,6 +5,10 @@ Host firmware facilitates configuring the MTCH2120 device through the USB-CDC in
 
 The precompiled binary for the ATSAMD21E18A host is available in the [bin](../bin) directory.
 
+# Host Firmware Version Information:
+- v1.1.0
+    - Bug fix related to Lump configuration write operation from MPLAB Data Visualizer is fixed. It is required to use Touch [Touch Plugin v2.3.1](https://gallery.microchip.com/packages/MPLAB-Touch).
+
 # Recomended Versions
 - [Touch Plugin v2.3.0](https://gallery.microchip.com/packages/MPLAB-Touch)
 - [MPLAB Data Visualizer v1.3.1677](https://www.microchmplabip.com/mplab/mplab-data-visualizer)
